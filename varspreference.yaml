@@ -1,7 +1,7 @@
 - name: variables from preference
   hosts: web
-  vars:
-    course: "Aws from playlevel"
+  # vars:
+  #   course: "Aws from playlevel"
   # vars_prompt:
   #   - name: course
   #     prompt: please enter course name
