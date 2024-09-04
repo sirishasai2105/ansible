@@ -1,0 +1,13 @@
+- name: variables from preference
+  hosts: web
+  vars:
+    course: "Aws from playlevel"
+  vars_prompt:
+    - name: course
+      prompt: please enter course name
+  vars_files:
+    vars1.yaml
+  tasks:
+    - name:
+      ansible.builtin.debug:
+        msg: "I am learning {{course}}"
