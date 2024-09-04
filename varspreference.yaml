@@ -8,6 +8,8 @@
   vars_files:
     vars1.yaml
   tasks:
-    - name:
+    - name: information of preference
+      vars:
+        course: "Aws from tasklevel"
       ansible.builtin.debug:
         msg: "I am learning {{course}}"
