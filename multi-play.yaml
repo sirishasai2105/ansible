@@ -1,0 +1,13 @@
+- name: multiplay example
+  hosts: web
+  tasks:
+    - name: play 01 task 01
+      ansible.builtin.debug:
+        msg: "Iam from play 01 task 01"
+
+- name: multiplay example
+  hosts: web
+  tasks:
+    - name: play 02 task 02
+      ansible.builtin.debug:
+        msg: "Iam from play 02 task 02"
