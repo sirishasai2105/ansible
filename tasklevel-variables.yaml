@@ -5,10 +5,23 @@
     duration: "120 hrs"
     trainer: "sivakumar reddy"
   tasks:
-    - name: task-level
-      vars:
-        course: "ansible with devops"
-        duration: "12 hrs"
-        trainer: "sai sirisha"
-        ansible.builtin.debug:
-          msg: "Hi, Iam learning {{course}} course duration is {{duration}} trainer is {{trainer}}"
+  - name: task-level
+    vars:
+      course: "ansible with devops"
+      duration: "12 hrs"
+      trainer: "sai sirisha"
+      ansible.builtin.debug:
+        msg: "Hi, Iam learning {{course}} course duration is {{duration}} trainer is {{trainer}}"
+
+
+
+# - name: variables to print
+#   hosts: web
+#   vars: #play level, all tasks in this play have access to this
+#     COURSE: "DevOps with AWS"
+#     DURATION: "120HRS"
+#     TRAINER: "Sivakumar Reddy M"
+#   tasks:
+#   - name: print the information
+#     ansible.builtin.debug:
+#       msg: "Hi, I am learning {{COURSE}}, Duration is: {{DURATION}}, Trainer: {{TRAINER}}"
