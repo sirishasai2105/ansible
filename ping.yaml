@@ -2,4 +2,4 @@
 host: #
 tasks:
   -name: ping the server
-  ansible.builtin.debug
+  ansible.builtin.ping
