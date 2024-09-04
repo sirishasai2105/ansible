@@ -5,6 +5,7 @@
       ansible.builtin.package:
         name: nginx
         state: installed
+        become: true
     - name: run nginx
       ansible.builtin.service:
         name: nginx
