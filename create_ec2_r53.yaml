@@ -2,15 +2,15 @@
   hosts: local
   connection: local
   vars:
-    ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-001753742e64eaea2
-    subnet_id: subnet-0dea6b8497269d28b 
+    ami_id: "ami-09c813fb71547fc4f"
+    sg_id: "sg-001753742e64eaea2"
+    subnet_id: "subnet-0dea6b8497269d28b" 
   instances:
    - mysql
    - backend
    - frontend 
   tasks:
-  - name : creating  ec2 instances
+  - name: creating  ec2 instance
     amazon.aws.ec2_instance:
       name: "{{item}}"
       ami_id: "{{ami_id}}"
@@ -22,4 +22,4 @@
 
   - name: getting the ec2-instances information after creating
     ansible.builtin.debug:
-      msg: "ec2-instancesprinting"
+      msg: {{"ec2-instancesprinting"}}
