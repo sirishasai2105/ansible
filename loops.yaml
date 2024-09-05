@@ -8,7 +8,7 @@
         name: "{{item}}"
         state: installed
       loop:
-        nginx
-        git
-        mysql
-        httpd
+        - nginx
+        - git
+        - mysql
+        - httpd
