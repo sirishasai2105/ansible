@@ -1,0 +1,25 @@
+- name: create ec2-instances through ansible
+  hosts: local
+  connection: local
+  vars:
+    ami_id: ami-09c813fb71547fc4f
+    sg_id: sg-001753742e64eaea2
+    subnet_id: subnet-0dea6b8497269d28b 
+  instances:
+   - mysql
+   - backend
+   - frontend 
+  tasks:
+  - name: creating 3 ec2 instances
+    amazon.aws.ec2_instance:
+      name: {{item}}
+      ami_id: "{{ami_id}}"
+      security_group: "{{sg_id}}"
+      vpc_subnet_id: "{{subnet_id}}"
+      instance_type: "t3.micro"
+    loop: "{{instances}}"
+    register: ec2-instancesprinting
+
+  - name: getting the ec2-instances information after creating
+    ansible.builtin.debug:
+      msg: "ec2-instancesprinting"
