@@ -1,0 +1,7 @@
+- name: creating the expense user
+  hosts: local
+  connection: local
+  tasks:
+   - name: built ansible facts
+     ansible.builtin.debug:
+      msg: "{{ansible_facts}}"
