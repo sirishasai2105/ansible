@@ -3,9 +3,9 @@
   connection: local
   become: true
   tasks:
-    - name: install the packages at once
-      ansible.builtin.pacakage:
-        name: {{item}}
+    - name: install all the packages at once
+      ansible.builtin.package:
+        name: {{ item }}
         state: installed
       loop:
         nginx
