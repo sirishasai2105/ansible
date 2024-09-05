@@ -5,3 +5,9 @@
    - name: built ansible facts
      ansible.builtin.debug:
       msg: "{{ansible_facts}}"
+   - name: user exists or not
+     ansible.builtin.command: id expense
+     register: USER
+     ignore_errors: true
+     ansible.builtin.debug:
+      msg: "user information is :{{USER}}"
