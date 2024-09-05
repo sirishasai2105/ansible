@@ -22,5 +22,5 @@
   tasks:
     - name: datatypes information
       ansible.builtin.debug:
-        msg: "Hi Iam learning {{course}} duration is {{duration}} live is {{live}} topics are:{{topics}} tools are {{tools}}"
+        msg: "Hi Iam learning {{course}} duration is {{duration}} live is {{live}} topics are:{{topics}} tools are {{tools}} "
     
