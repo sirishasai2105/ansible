@@ -1,26 +1,53 @@
-- name: prints the information of datatypes
+# - name: prints the information of datatypes
+#   hosts: local
+#   connection: local
+#   vars:
+#     course: "Aws with devops"
+#     duration: 120
+#     live: true
+#     topics:
+#     - Aws
+#     - Docker
+#     - Git
+#     - Kubernetes
+#     - Ansible
+#     tools:
+#       ci: jenkins
+#       cloud: Aws
+#       Cm: Ansible
+#       Aws:
+#         - s3
+#         - Iam
+#         - route 53
+#   tasks:
+#     - name: datatypes information
+#       ansible.builtin.debug:
+#         msg: "Hi Iam learning {{course}} duration is {{duration}} live is {{live}} topics are:{{topics}} tools are {{tools}} "
+
+
+- name: devops course information
   hosts: local
-  connection: local
+  connection: local # for localhosts
   vars:
-    course: "Aws with devops"
-    duration: 120
-    live: true
-    topics:
-    - Aws
-    - Docker
-    - Git
-    - Kubernetes
+    course: "DevOps with AWS" #string
+    duration: 120 #number
+    topics: #list
+    - Linux
+    - Shell
     - Ansible
-    tools:
-      ci: jenkins
-      cloud: Aws
-      Cm: Ansible
-      Aws:
-        - s3
-        - Iam
-        - route 53
+    - Terraform
+    - AWS
+    - K8
+    live: true #boolean
+    tools: #map/dictionary
+      ci: jenkins # string
+      cm: ansible
+      cloud: aws
+      aws:
+      - IAM
+      - S3
   tasks:
-    - name: datatypes information
-      ansible.builtin.debug:
-        msg: "Hi Iam learning {{course}} duration is {{duration}} live is {{live}} topics are:{{topics}} tools are {{tools}} "
+  - name: print the course information
+    ansible.builtin.debug:
+      msg: "Hi, I am learning {{ course }}, with duration: {{ duration }}, topics are: {{ topics }}, and live: {{ live }}, tools are: {{ tools }}"
     
