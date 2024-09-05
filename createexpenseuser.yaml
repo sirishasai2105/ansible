@@ -5,3 +5,11 @@
     - name: printing the ansible facts
       ansible.builtin.debug:
         msg: "{{ansible_facts}}"
+    
+    - name: checking whether user exists or not
+      ansible.builtin.command: id expense
+      register: USER
+
+    - name: printing the user information
+      ansible.builtin.debug:
+        msg: "user information:{{USER}}"
