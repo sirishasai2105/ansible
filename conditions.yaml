@@ -9,4 +9,7 @@
       ansible.builtin.debug:
         msg: "entered number {{my_number}} is less than 10"
       when: my_number | int < 10
-      
+    - name: to check whether a number is greater than 10
+      ansible.builtin.debug:
+        msg: "entered number {{my_number}} is greater than 10"
+      when: my_number | int > 10      
