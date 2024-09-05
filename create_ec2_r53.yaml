@@ -18,43 +18,43 @@
       vpc_subnet_id: "{{subnet_id}}"
       instance_type: "t3.micro"
     loop: "{{instances}}"
-    register: ec2-instancesprinting
+    register: ec2-instanceprinting
 
   - name: getting the ec2-instances information after creating
     ansible.builtin.debug:
-      msg: "{{ec2-instancesprinting}}"
+      msg: "{{ec2-instanceprinting}}"
 
-- name: create ec2 and r53 records
-  hosts: local
-  connection: local
-  # assignment
-  # move this to vars_files
-  vars:
-    subnet_id: subnet-09863c54177764565 # replace with your subnet id
-    sg_id: "sg-09a300a3729062c5a"
-    ami_id: "ami-09c813fb71547fc4f"
-    instances:
-    - mysql
-    - backend
-    - frontend
-    zone: daws81s.online
-  tasks:
-  - name: ansible to install boto3 and botocore
-    ansible.builtin.pip:
-      name:
-      - boto3
-      - botocore
-      executable: pip3.9
-  - name: create ec2 instance
-    amazon.aws.ec2_instance:
-      name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      instance_type: "t3.micro"
-      security_group: "{{ sg_id }}"
-      image_id: "{{ ami_id }}"
-    loop: "{{ instances }}"
-    register: ec2_instances
+# - name: create ec2 and r53 records
+#   hosts: local
+#   connection: local
+#   # assignment
+#   # move this to vars_files
+#   vars:
+#     subnet_id: subnet-09863c54177764565 # replace with your subnet id
+#     sg_id: "sg-09a300a3729062c5a"
+#     ami_id: "ami-09c813fb71547fc4f"
+#     instances:
+#     - mysql
+#     - backend
+#     - frontend
+#     zone: daws81s.online
+#   tasks:
+#   - name: ansible to install boto3 and botocore
+#     ansible.builtin.pip:
+#       name:
+#       - boto3
+#       - botocore
+#       executable: pip3.9
+#   - name: create ec2 instance
+#     amazon.aws.ec2_instance:
+#       name: "{{ item }}"
+#       vpc_subnet_id: "{{ subnet_id }}"
+#       instance_type: "t3.micro"
+#       security_group: "{{ sg_id }}"
+#       image_id: "{{ ami_id }}"
+#     loop: "{{ instances }}"
+#     register: ec2_instances
 
-  - name: print the output
-    ansible.builtin.debug:
-      msg: "{{ ec2_instances }}"
+#   - name: print the output
+#     ansible.builtin.debug:
+#       msg: "{{ ec2_instances }}"
