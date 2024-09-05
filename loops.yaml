@@ -5,7 +5,7 @@
   tasks:
     - name: install all the packages at once
       ansible.builtin.package:
-        name: {{ item }}
+        name: {{item}}
         state: installed
       loop:
         nginx
