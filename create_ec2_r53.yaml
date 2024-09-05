@@ -1,4 +1,4 @@
-- name: create ec2-instances through ansible
+- name: create ec2-instance through ansible
   hosts: local
   connection: local
   vars:
