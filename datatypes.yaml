@@ -1,0 +1,26 @@
+- name: prints the information of datatypes
+  hosts: web
+  connection: local
+  vars:
+    course: "Aws with devops"
+    duration: 120
+    live: true
+    topics:
+    - Aws
+    - Docker
+    - Git
+    - Kubernetes
+    - Ansible
+    tools:
+      ci: jenkins
+      cloud: Aws
+      Cm: Ansible
+      Aws:
+        - s3
+        - Iam
+        - route 53
+  tasks:
+    - name: datatypes information
+      ansible.builtin.debug:
+        msg: "Hi Iam learning {{course}} duration is {{duration}} live is {{live}} topics are:{{topics}} tools are {{tools}}"
+    
