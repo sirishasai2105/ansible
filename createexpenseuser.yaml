@@ -2,17 +2,6 @@
   hosts: local
   connection: local
   tasks:
-   - name: built ansible facts
-     ansible.builtin.debug:
-      msg: "{{ansible_facts}}"
-   - name: user exists or not
-     ansible.builtin.command: id expense
-     register: USER
-     ignore_errors: true
-   - name: prints user information
-     ansible.builtin.debug:
-      msg: "user information is :{{USER}}"
-   - name: creates the user if doesn't exist
-      ansible.builtin.command: useradd expense
-    when: USER.rc!= 0
-      
+    - name: printing the ansible facts
+      ansible.builtin.debug:
+        msg: "{{ansible_facts}}"
