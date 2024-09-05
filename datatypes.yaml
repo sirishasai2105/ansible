@@ -1,5 +1,5 @@
 - name: prints the information of datatypes
-  hosts: web
+  hosts: local
   connection: local
   vars:
     course: "Aws with devops"
