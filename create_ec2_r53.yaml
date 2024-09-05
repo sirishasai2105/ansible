@@ -18,11 +18,11 @@
       vpc_subnet_id: "{{subnet_id}}"
       instance_type: "t3.micro"
     loop: "{{instances}}"
-    register: ec2-instanceprinting
+    register: output
 
   - name: getting the ec2-instances information after creating
     ansible.builtin.debug:
-      msg: "{{ec2-instanceprinting}}"
+      msg: "{{output}}"
 
 # - name: create ec2 and r53 records
 #   hosts: local
