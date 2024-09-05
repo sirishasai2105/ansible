@@ -1,6 +1,7 @@
 - name: creating the expense user
   hosts: local
   connection: local
+  become: yes
   tasks:
     - name: printing the ansible facts
       ansible.builtin.debug:
