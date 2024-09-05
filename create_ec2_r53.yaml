@@ -22,4 +22,4 @@
 
   - name: getting the ec2-instances information after creating
     ansible.builtin.debug:
-      msg: {{"ec2-instancesprinting"}}
+      msg: "{{ec2-instancesprinting}}"
