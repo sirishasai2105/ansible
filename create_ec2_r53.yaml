@@ -40,6 +40,19 @@
       overwrite: true
     loop: "{{ ec2_instances.results }}"
 
+  - name: creating frontend domain
+    amazon.aws.route:53:
+      state: present
+      zone: {{ zone }}
+      record: "{{ item }} . {{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].public_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instances.results }}"
+    when: item.item == "frontend"
+
 
 
 # - name: create ec2 and r53 records
