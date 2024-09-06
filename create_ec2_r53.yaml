@@ -5,7 +5,6 @@
     sg_id: "sg-001753742e64eaea2"
     subnet_id: "subnet-01d01e08a40b72067"
     ami_id: "ami-09c813fb71547fc4f"
-    region: us-east-1
     zone: "daws81s.online"
     instances:
     - mysql
@@ -35,7 +34,7 @@
       record: "{{ item.item }} . {{ zone }}"
       type: A
       ttl: 1
-      value: item.instances[0].private_ip_address
+      value: "{{ item.instances[0].private_ip_address }}"
       wait: true 
       override: true
     loop: "{{ ec2_instances . results }}"                     
