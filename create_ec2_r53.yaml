@@ -22,6 +22,6 @@
     loop: "{{ instances }}"
     register: ec2_instances
 
-  - name: getting the ec2-instances information after creating
-    ansible.builtin.debug:
-      msg: "{{ ec2_instances }}"                              
+  # - name: getting the ec2-instances information after creating
+  #   ansible.builtin.debug:
+  #     msg: "{{ ec2_instances }}"                              
