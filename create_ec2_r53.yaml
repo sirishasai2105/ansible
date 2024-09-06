@@ -6,6 +6,7 @@
     subnet_id: "subnet-01d01e08a40b72067"
     ami_id: "ami-09c813fb71547fc4f"
     zone: "daws81s.online"
+    region: us-east-1
     instances:
     - mysql
     - backend
