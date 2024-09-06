@@ -40,7 +40,7 @@
       overwrite: true
     loop: "{{ ec2_instances.results }}"
 
-  - name: creating frontend domain
+  - name: creating r53 domain
     amazon.aws.route:53:
       state: present
       zone: "{{ zone }}"
