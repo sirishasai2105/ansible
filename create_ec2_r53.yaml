@@ -2,10 +2,9 @@
   hosts: local
   connection: local
   vars:
-    
-    image_id: "ami-09c813fb71547fc4f"
     sg_id: "sg-001753742e64eaea2"
     subnet_id: "subnet-01d01e08a40b72067"
+    image_id: "ami-09c813fb71547fc4f"
     region: us-east-1
     instances:
     - mysql
