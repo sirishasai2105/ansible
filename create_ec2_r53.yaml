@@ -55,7 +55,7 @@
     - mysql
     - backend
     - frontend
-    zone: daws81s.online
+    zone: reyanshsai.online
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
