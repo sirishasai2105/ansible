@@ -4,7 +4,7 @@
   vars:
     sg_id: "sg-001753742e64eaea2"
     subnet_id: "subnet-01d01e08a40b72067"
-    image_id: "ami-09c813fb71547fc4f"
+    ami_id: "ami-09c813fb71547fc4f"
     region: us-east-1
     instances:
     - mysql
@@ -15,7 +15,7 @@
   - name: creating  ec2 instance
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      ami_id: "{{ image_id }}"
+      image_id: "{{ ami_id }}"
       security_group: "{{ sg_id }}"
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: "t3.micro"
