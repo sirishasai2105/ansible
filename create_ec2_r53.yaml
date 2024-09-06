@@ -21,7 +21,6 @@
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: "t3.micro"
       region: "{{ region }}"
-      state: present
     loop: "{{ instances }}"
     register: ec2_instances
 
