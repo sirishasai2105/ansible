@@ -53,6 +53,7 @@
 #     loop: "{{ ec2_instances.results }}"
 #     when: item.item == "frontend"
 
+
 - name: create ec2 and r53 records
   hosts: local
   connection: local
