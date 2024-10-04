@@ -10,7 +10,6 @@
 #     ansible.builtin.service:
 #       name: nginx
 #       state: started
-
 - name: installing and run
   hosts: web
   become: yes
