@@ -3,7 +3,7 @@
   connection: local
   tasks:
   - name: installing nginx
-    ansible.builtin.pacakage:
+    ansible.builtin.package:
       name: nginx
       state: installed
   - name: starting nginx
