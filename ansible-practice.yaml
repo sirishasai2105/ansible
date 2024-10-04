@@ -1,12 +1,27 @@
-- name: install nginx and run
+# - name: install nginx and run
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: installing nginx
+#     ansible.builtin.package:
+#       name: nginx
+#       state: installed
+#   - name: starting nginx
+#     ansible.builtin.service:
+#       name: nginx
+#       state: started
+
+- name: installing and run
   hosts: web
   become: yes
   tasks:
-  - name: installing nginx
+  - name: installing the packages 
     ansible.builtin.package:
-      name: nginx
-      state: installed
-  - name: starting nginx
-    ansible.builtin.service:
-      name: nginx
-      state: started
+      name: {{ item }}
+      state: present
+  loop:
+  - mysql
+  - nginx
+  - httpd
+  - postfix
+
